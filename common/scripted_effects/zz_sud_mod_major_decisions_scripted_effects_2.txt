@@ -1,0 +1,8 @@
+﻿dynasty_of_many_crowns_effects = {
+	dynasty = {
+		add_dynasty_modifier = {
+			modifier = dynasty_of_many_crowns
+		}
+		add_dynasty_prestige = 6000
+	}
+}

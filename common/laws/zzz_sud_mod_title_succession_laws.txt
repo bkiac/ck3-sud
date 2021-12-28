@@ -1,0 +1,222 @@
+﻿title_succession_laws = {
+	#Default Feudal Elective
+	feudal_elective_succession_law = {
+		can_have = {
+			has_government = feudal_government
+			highest_held_title_tier >= tier_duchy
+			NOR = { #Cultures have their special flavor.
+				culture = culture:anglo_saxon
+				has_culture_group = culture_group:north_germanic_group
+			}
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
+		}
+		succession = {
+			order_of_succession = election
+			election_type = feudal_elective
+		}
+		flag = elective_succession_law
+		title_allegiance_opinion = 10
+		revoke_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+
+	#HRE Succession
+	princely_elective_succession_law = {
+		can_have = {
+			has_government = feudal_government
+			highest_held_title_tier = tier_empire
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+		}
+		can_title_have = {
+			this = title:e_hre
+			can_title_have_law_general_trigger = yes
+		}
+		succession = {
+			order_of_succession = election
+			election_type = princely_elective
+		}
+		flag = elective_succession_law
+		flag = princely_elective_succession_law
+		title_allegiance_opinion = 15
+		modifier = {
+			vassal_limit = 20
+			powerful_vassal_opinion = 15
+			feudal_government_tax_contribution_mult = -0.1
+			vassal_levy_contribution_mult = -0.33
+		}
+		revoke_cost = {
+			prestige = change_hre_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+
+#BYZ Succession
+	byz_elective_succession_law = {
+		can_have = {
+			has_government = feudal_government
+			highest_held_title_tier = tier_empire
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+		}
+		can_title_have = {
+			tier >= tier_duchy
+			this = title:e_byzantium
+		}
+		succession = {
+			order_of_succession = election
+			election_type = byz_elective
+		}
+		flag = elective_succession_law
+		flag = byz_elective_succession_law
+		modifier = {
+		powerful_vassal_opinion = -45
+		#short_reign_duration_mult = 0.5
+		vassal_levy_contribution_mult = -2.80
+		feudal_government_tax_contribution_mult = -0.1
+		#theocracy_government_vassal_contribution_mult = -2.80
+		#theocracy_government_vassal_levy_contribution_mult = -2.80
+		men_at_arms_cap = 1
+		men_at_arms_limit = 1
+		levy_size = -2.5
+		men_at_arms_maintenance = -0.1
+		#mercenary_hire_cost_mult = -0.45
+		same_culture_mercenary_hire_cost_mult = -0.1
+		levy_reinforcement_rate = -1.75
+		#embarkation_cost_mult = 0.25
+		holy_order_hire_cost_mult = 2.0
+		}
+		revoke_cost = {
+			prestige = change_hre_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+
+	#Witenagemot
+	saxon_elective_succession_law = {
+		can_have = {
+			OR = {
+				has_government = feudal_government
+				has_government = tribal_government
+			}
+			highest_held_title_tier >= tier_kingdom
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+			culture = culture:anglo_saxon
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
+		}
+		succession = {
+			order_of_succession = election
+			election_type = saxon_elective
+		}
+		flag = elective_succession_law
+		title_allegiance_opinion = 5
+		revoke_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+	#Thing
+	scandinavian_elective_succession_law = {
+		can_have = {
+			OR = {
+				has_government = feudal_government
+				has_government = tribal_government
+			}
+			highest_held_title_tier >= tier_duchy
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+			has_culture_group = culture_group:north_germanic_group
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
+		}
+		succession = {
+			order_of_succession = election
+			election_type = scandinavian_elective
+		}
+		flag = elective_succession_law
+		title_allegiance_opinion = 5
+		revoke_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+	#Tanistry
+	gaelic_elective_succession_law = {
+		can_have = {
+			OR = {
+				has_government = feudal_government
+				has_government = tribal_government
+			}
+			highest_held_title_tier >= tier_duchy
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+			custom_description = {
+				OR = {
+					has_culture_group = culture_group:brythonic_group
+					has_culture_group = culture_group:goidelic_group
+				}
+				text = succession_laws_must_have_valid_tanistry_culture
+			}
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
+		}
+		succession = {
+			order_of_succession = election
+			election_type = gaelic_elective
+		}
+		flag = elective_succession_law
+		title_allegiance_opinion = 5
+		revoke_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+	
+	#Player Heir
+	temporal_head_of_faith_succession_law = {
+		can_title_have = {
+			is_temporal_head_of_faith_trigger = yes
+		}
+		should_show_for_title = { # Never show this in the UI, just apply it through script
+			always = no
+		}
+		can_remove_from_title = {
+			custom_description = {
+				text = succession_laws_must_not_be_temporal
+				is_temporal_head_of_faith_trigger = no
+			}
+		}
+		succession = {
+			order_of_succession = player_heir
+		}
+	}
+}

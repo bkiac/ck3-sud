@@ -1,0 +1,74 @@
+﻿barony_is_valid_for_holy_order_lease_trigger = {
+	title_province = {has_holding_type = castle_holding}
+	trigger_if = {
+		limit = {
+			holder = $CHARACTER$
+		}
+		can_be_leased_out = yes
+	}
+	trigger_else = {
+		holder.primary_title.tier = tier_barony
+	}
+}
+
+
+
+# this = Person trying to create the title
+can_afford_create_head_of_faith_title_cost_trigger = {
+	trigger_if = {
+		limit = {
+			faith = {
+				has_doctrine_parameter = temporal_head_of_faith
+				OR = {
+					has_doctrine = muhammad_succession_sunni_doctrine
+					has_doctrine = muhammad_succession_shia_doctrine
+				}
+			}		
+		}
+		trigger_if = {
+			limit = { NOT = { has_trait = sayyid } }
+			piety >= massive_piety_value
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			faith = {
+				has_doctrine_parameter = temporal_head_of_faith
+			}
+		}
+		piety >= major_piety_value
+	}
+	trigger_else = {
+		limit = {
+			faith = {
+				has_doctrine_parameter = spiritual_head_of_faith
+			}
+		}
+		gold >= 300
+	}	
+}
+
+# FAITH = The faith we are trying to make the head of faith title for
+# this = Person trying to create the title
+can_create_head_of_faith_title_trigger = {
+	$FAITH$ = {
+		trigger_if = {
+			limit = {
+				has_doctrine_parameter = spiritual_head_of_faith
+			}
+			can_create_spiritual_head_of_faith_title_trigger = yes
+		}
+		trigger_else_if = {
+			limit = {
+				has_doctrine_parameter = temporal_head_of_faith
+			}
+			can_create_temporal_head_of_faith_title_trigger = yes
+		}
+		trigger_else = {
+			# We shouldn't hit this point, but if we do use the following as error messages.
+			has_doctrine_parameter = spiritual_head_of_faith
+			has_doctrine_parameter = temporal_head_of_faith
+		}
+	}
+	can_afford_create_head_of_faith_title_cost_trigger = yes
+}

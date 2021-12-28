@@ -1,0 +1,43 @@
+﻿#Late Medieval Era
+bombard = {
+	type = siege_weapon
+	fights_in_main_phase = no
+	
+	damage = 0
+	toughness = 12
+	
+	siege_tier = 4
+	siege_value = 2
+	
+	buy_cost = { gold = bombard_recruitment_cost }
+	low_maintenance_cost = { gold = bombard_low_maint_cost }
+	high_maintenance_cost = { gold = bombard_high_maint_cost }
+	
+	stack = 10
+	allowed_in_hired_troops = no
+	
+}
+
+# Special
+house_guard = {
+	type = heavy_infantry
+	
+	damage = 40
+	toughness = 50
+	pursuit = 0
+	screen = 40
+	
+	counters = {
+		pikemen = 2
+		archers = 2
+	}
+	
+	buy_cost = { gold = 50 }
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { gold = 1 }
+	
+	max_sub_regiments = 5
+	
+	stack = 100
+	ai_quality = { value = 100 }
+}

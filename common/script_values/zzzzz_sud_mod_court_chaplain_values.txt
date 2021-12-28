@@ -1,0 +1,44 @@
+﻿# Zealous Proselytizer bonus
+court_chaplain_conversion_monthly_increase_perk_bonus = {
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = zealous_proselytizer_perk }
+		}
+		add = court_chaplain_conversion_base_total
+		multiply = {
+			add = zealous_proselytizer_percentage
+			divide = 100
+		}
+	}
+}
+
+# Learned Proselytizer bonus
+court_chaplain_conversion_monthly_increase_perk_bonus_2 = {
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = theologian_perk }
+		}
+		add = court_chaplain_conversion_base_total
+		multiply = {
+			add = learned_proselytizer_percentage
+			divide = 100
+		}
+	}
+}
+
+# The base modifier
+court_chaplain_religious_relations_modifier = {
+	add = learning
+	divide = 15
+}
+
+# Base modifier value
+court_chaplain_religious_relations_opinion_base = {
+	add = learning
+	divide = 1.5
+}
+
+court_chaplain_conversion_monthly_increase = {
+	add = learning
+	divide = 8
+}

@@ -1,0 +1,41 @@
+﻿chancellor_integrate_title_progress_gain = {
+	add = diplomacy
+	multiply = 0.1
+}
+
+# Foreign Affairs opinion base modifier
+chancellor_foreign_affairs_opinion_base = {
+	add = diplomacy
+	divide = 1.5
+}
+
+# Base prestige gain scale
+chancellor_foreign_affairs_prestige_gain_base = {
+	add = diplomacy
+	divide = 16
+}
+
+chancellor_domestic_affairs_opinion_base = {
+	add = diplomacy
+	divide = 1.5
+}
+
+chancellor_domestic_affairs_opinion_max = {
+	add = diplomacy
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = chains_of_loyalty_perk }
+		}
+		add = chancellor_domestic_affairs_opinion_chains_of_loyalty_bonus
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				exists = dynasty
+				dynasty = { has_dynasty_perk = erudition_legacy_5 }
+			}
+		}
+		add = chancellor_domestic_affairs_opinion_erudition_bonus
+	}
+	divide = 1.5
+}

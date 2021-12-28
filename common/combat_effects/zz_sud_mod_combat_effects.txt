@@ -1,0 +1,40 @@
+﻿recently_disembarked_advantage = {
+	advantage = -80
+}
+
+gathering_army_advantage = {
+	advantage = -15
+}
+
+supply_state_running_low_advantage = {
+	advantage = -15
+}
+
+supply_state_starving_advantage = {
+	advantage = -35
+}
+
+combat_debt_level_0 = {
+	advantage = -5
+	image = owner_in_debt
+}
+
+combat_debt_level_1 = {
+	advantage = -10
+	image = owner_in_debt
+}
+
+combat_debt_level_2 = {
+	advantage = -15
+	image = owner_in_debt
+}
+
+combat_debt_level_3 = {
+	advantage = -20
+	image = owner_in_debt
+}
+
+combat_debt_level_4 = {
+	advantage = -25
+	image = owner_in_debt
+}

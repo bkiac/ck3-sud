@@ -1,0 +1,29 @@
+﻿# Heregeld
+heregeld_perk = {
+	lifestyle = stewardship_lifestyle
+	tree = wealth
+	position = { 0 1.25 }
+	icon = node_stewardship
+	
+	parent = golden_obligations_perk
+	
+	character_modifier = {
+		vassal_tax_contribution_mult = 0.25
+	}
+}
+
+
+# Detailed Ledgers
+detailed_ledgers_perk = {
+	lifestyle = stewardship_lifestyle
+	tree = wealth
+	position = { 0 2.5 }
+	icon = node_stewardship
+	
+	parent = heregeld_perk
+	
+	character_modifier = {
+		republic_government_opinion = 20
+		republic_government_tax_contribution_mult = 0.25
+	}
+}

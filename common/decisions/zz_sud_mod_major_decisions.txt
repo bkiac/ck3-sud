@@ -1,0 +1,165 @@
+﻿found_empire_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	major = yes
+	ai_check_interval = 60
+	desc = found_empire_decision_desc
+
+	is_shown = {
+		highest_held_title_tier = tier_kingdom
+		OR = {
+			is_independent_ruler = yes
+			any_held_title = {
+				count >= 3
+				tier = tier_kingdom
+			}
+		}
+		NOT = { has_game_rule = off_custom_kingdoms }
+	}
+
+	is_valid = {
+		prestige_level >= 4
+		OR = {
+			sub_realm_size >= 120
+			AND = {
+				custom_description = {
+					text = found_empire_decision_three_kingdoms_held
+					any_held_title = {
+						count >= 3
+						tier = tier_kingdom
+					}
+				}
+				sub_realm_size >= 90
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_independent_ruler = yes
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 2000
+		prestige = 3000
+		piety = 600
+	}
+
+	effect = {
+		create_custom_empire_effect = yes
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+declare_bloodline_holy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	major = yes
+	desc = declare_bloodline_holy_decision_desc
+
+	ai_check_interval = 120
+
+	is_shown = {
+		is_lowborn = no
+		highest_held_title_tier >= 3 #Dukes and higher.
+		NOT = { #Just once per Faith.
+			faith = {
+				exists = var:variable_savior_found
+			}
+		}
+		NOR = {
+			has_trait = saoshyant
+			has_trait = saoshyant_descendant
+			has_trait = sayyid
+			has_trait = blood_of_prophet
+			has_trait = savior
+			has_trait = divine_blood
+			has_trait = paragon
+			has_trait = consecrated_blood
+			faith.religion = faith:ashari.religion #Uses Sayyid mechanics already.
+			faith.religion = faith:mazdayasna.religion #Must aim to become Saoshyant instead.
+			dynasty = {
+				exists = var:variable_made_bloodline_holy
+			}
+		}
+		OR = { #Should not be available to non-Temporal religious heads.
+			root.faith = { has_doctrine = doctrine_temporal_head }
+			NOT = { root = root.faith.religious_head }
+		}
+		OR = {  #Either headless faith, religious head himself, or in good relations with other religious head.
+			root.faith = { has_doctrine = doctrine_no_head }
+			AND = {
+				faith = { has_doctrine = doctrine_temporal_head } #Should not be available for the Pope and such.
+				root = root.faith.religious_head
+			}
+			AND = {
+				exists = root.faith.religious_head
+				NOT = { root = root.faith.religious_head }
+			}
+		}
+	}
+
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.faith.religious_head
+				NOT = { root = root.faith.religious_head }
+			}
+			root.faith.religious_head = {
+				opinion = {
+					target = root
+					value >= 75
+				}
+			}
+		}
+		custom_description = {
+			text = faith_is_reformed
+			subject = root
+			faith = { NOT = { has_doctrine_parameter = unreformed } }
+		}
+		custom_description = {
+			text = "consecrate_bloodline_holy_site"
+			faith = {
+				any_holy_site = {
+					OR = {
+						county.holder = root
+						county.holder.liege = { this = root }
+						county.holder.top_liege = { this = root }
+					}
+					count >= 1
+				}
+			}
+		}
+		piety_level >= 5
+	}
+
+	cost = {
+		piety = 3000
+	}
+
+	effect = {
+		trigger_event = major_decisions.0100
+		show_as_tooltip = {
+			declare_bloodline_holy_decision_effect = yes
+		}
+
+		stress_impact = {
+			humble = massive_stress_impact_gain
+			ambitious = massive_stress_impact_loss
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

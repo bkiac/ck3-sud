@@ -1,0 +1,47 @@
+﻿@leadership_2 = "gfx/interface/icons/culture_innovations/innovation_leadership_02.dds"
+@maa_01 = "gfx/interface/icons/culture_innovations/innovation_maa_01.dds"
+@knight = "gfx/interface/icons/culture_innovations/innovation_knight.dds"
+
+
+innovation_house_soldiers = {
+	group = culture_group_military
+	culture_era = culture_era_early_medieval
+	icon = @maa_01
+
+	modifier = {
+		men_at_arms_cap = 4
+		men_at_arms_maintenance = 0.02
+		levy_size = -0.05
+	}
+
+	flag = global_regular
+	flag = early_medieval_era_regular
+}
+
+innovation_centralization_1 = {
+	group = culture_group_civic
+	culture_era = culture_era_early_medieval
+	icon = @leadership_2
+	
+	custom = sud_mod_reduced_factionalism_1
+	modifier = {
+		powerful_vassal_opinion = 5
+	}
+
+	flag = global_regular
+	flag = early_medieval_era_regular
+}
+
+innovation_envelopment = {
+	group = culture_group_military
+	culture_era = culture_era_early_medieval
+	icon = @knight
+
+	maa_upgrade = {
+		type = light_cavalry
+		pursuit = 8
+	}
+
+	flag = global_regular
+	flag = early_medieval_era_regional
+}

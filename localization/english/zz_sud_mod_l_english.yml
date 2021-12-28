@@ -1,0 +1,105 @@
+﻿l_english:
+
+#Regional
+ innovation_echoes_of_rome:0 "Echoes of Rome"
+ innovation_echoes_of_rome_desc:0 "Professionals, backstabbers, and professional backstabbers"
+
+ innovation_far_from_rome:0 "Far From Rome"
+ innovation_far_from_rome_desc:0 "Fighting these Turks is risky Byzness"
+
+ innovation_rome_again:0 "You can't go Rome again"
+ innovation_rome_again_desc:0 "Maybe we're gonna make it afterall"
+
+ innovation_mongol_awakening:0 "Mongol Awakening"
+ innovation_mongol_awakening_desc:0 "Time to Ride"
+
+ innovation_seeds_of_spain:0 "Seeds of Spain"
+ innovation_seeds_of_spain_desc:0 "The siestas will be worth it"
+
+######################
+# Early Medieval Era #
+###################### 
+
+ innovation_centralization_1:0 "Early Centralization"
+ innovation_centralization_1_desc:0 "The guy with the crown runs the town"
+ sud_mod_reduced_factionalism_1:0 "[vassals|E] are slightly less likely to join independence and liberty factions"
+ innovation_envelopment:0 "Riding Culture"
+ innovation_envelopment_desc:0 "Why walk when you can ride?"
+
+
+#####################
+# High Medieval Era #
+#####################
+
+ innovation_centralization_2:0 "Progressing Centralization"
+ innovation_centralization_2_desc:0 "You guys should probably listen to me. I'm kind of a big deal."
+ sud_mod_reduced_factionalism_2:0 "[vassals|E] are less likely to join independence and liberty factions"
+ innovation_nobles_drill:0 "The Nobles Drill"
+ innovation_nobles_drill_desc:0 "Well, it's better than farming"
+
+
+#####################
+# Late Medieval Era #
+##################### 
+
+ innovation_centralization_3:0 "Late Centralization"
+ innovation_centralization_3_desc:0 "L'état, c'est... ok well, some of us. But mostly me."
+ sud_mod_reduced_factionalism_3:0 "[vassals|E] are significantly less likely to join independence and liberty factions"
+ innovation_commoners_drill:0 "The Commoners Drill"
+ innovation_commoners_drill_desc:0 "Maybe Alexander was on to something with these pikes..."
+ innovation_advanced_swordsmithing:0 "Advanced Swordsmithing"
+ innovation_advanced_swordsmithing_desc:0 "Stick 'em with the pointy end."
+ innovation_barding:0 "Barding"
+ innovation_barding_desc:0 "I mean, the horses are more valuable than the people afterall..."
+ 
+#####################
+# Renaissance Era #
+##################### 
+ culture_era_renaissance:0 "Renaissance"
+ culture_era_renaissance_desc:0 "We're like, totally smart now."
+ 
+ innovation_professionalization_commoners:0 "Professionalization of the Commoners"
+ innovation_professionalization_commoners_desc:0 "I'll make a man out of you..."
+ innovation_professionalization_nobility:0 "Professionalization of the Nobility"
+ innovation_professionalization_nobility_desc:0 "We're not retreating, we're advancing to the rear!"
+ 
+ #Custom
+ sane_holy_order_lease_decision:0 "Lease Holding to Holy Order"
+ sane_holy_order_lease_decision_desc:0 "#F Our [holy_order|E] has done good work, and perhaps could be rewarded. There has been talk at court about leasing it an extra castle or two, perhaps the [barony.GetName]?#!"
+ sane_holy_order_lease_decision_tooltip:0 "Lease a castle holding for a [holy_order|E]"
+ sane_holy_order_lease_decision_confirm:0 "Lease Holding"
+ I_HAVE_TWO_CASTLE_COUNTY:1 "You have a [barony|E] with a [castle|E] that can be leased out as the Holy Order's Headquarters."
+ CONVERSION_PERK_BONUS_VALUE_LEARNING:1 "[GetPerk('scholar_perk').GetName(GetPlayer)]"
+ scholar_perk_effect:1 "Your Steward's rate of culture conversion is improved by 50%
+
+ #Regions
+ world_innovation_longbow:0 "Wales"
+
+ #Laws
+ byz_elective_succession_law:0 "Roman Elective"
+ byz_elective_succession_law_effects:0 "The [ruler|E] and all direct [de_jure|E] [vassals|E] of one or two [ranks|E] below the [title|E] can nominate an [heir|E] from among themselves and the [close_family|E] of the ruler. The Emperor's choice has a strong advantage, but vassals are much more likely to seek independence."
+ feudal_elective_succession_law_effects:1 "The [ruler|E] and all direct [de_jure|E] [vassals|E] of one or two [ranks|E] below the [title|E] can nominate a [title_heir|E] from among themselves and the [close_family|E] of the ruler."
+ princely_elective_succession_law_effects:1 "The Emperor and the seven Prince–Electors can nominate a [title_heir|E] from among themselves, any [legitimate|E] children and siblings of the [ruler|E], as well as any other major [de_jure|E] [vassal|E] of the Empire. If an historical elector [title|E] is held by infidels or does not exist, another [de_jure|E] vassal will take its place. This [succession_law|E] places a significant importance on [faith|E] and [piety|E].\n\nThe Electoral titles for this realm are the Counties of Cologne, Mainz and Trier, and the Duchies of Bohemia, East Franconia, Ostfalen and Ostmark. While vassals are less likely to seek independence, they are more sensitive to changes in crown authority"
+ byz_elective_candidates:0 "Close Family, Claimants, and Electors"
+ byz_elective_candidates_tooltip:0 "In order to be a valid Candidate under Roman Elective, a character must fulfill one of the following conditions:\n$EFFECT_LIST_BULLET$Be a legitimate [close_family|E] member of the current ruler, who is not in line to inherit a Theocracy or Republic\n$EFFECT_LIST_BULLET$Be a [claimant|E] to the title, who is not in line to inherit a Theocracy or Republic\n$EFFECT_LIST_BULLET$Be a valid Feudal [elector|E] to the title"
+ byz_elective_electors:0 "Ruler and Vassals"
+ byz_elective_electors_tooltip:0 "In order to be a valid [elector|E] under Roman Elective, a vassal must fulfill all the following conditions:\n$EFFECT_LIST_BULLET$Be a [de_jure|E] vassal of the title\n$EFFECT_LIST_BULLET$Be a direct vassal of the title\n$EFFECT_LIST_BULLET$Be only one or two [ranks|E] below the title"
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

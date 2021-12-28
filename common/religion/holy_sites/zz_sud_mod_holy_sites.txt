@@ -1,0 +1,123 @@
+﻿baghdad = {
+	county = c_baghdad #Patriarchical seat of Nestorianism, also origin of the Sunni Caliphate and holy in Shia Islam
+
+	character_modifier = {
+		name = holy_site_baghdad_effect_name
+		development_growth_factor = 0.1
+		church_holding_build_gold_cost = -0.1
+	}
+}
+
+mecca = {
+	county = c_mecca
+
+	character_modifier = {
+		name = holy_site_mecca_effect_name
+		monthly_piety_gain_per_knight_mult = 0.02
+		knight_effectiveness_mult = 0.1
+		#men_at_arms_maintenance = -0.025
+		#levy_reinforcement_rate_same_faith = 0.05
+	}
+}
+
+medina = {
+	county = c_medina
+
+	character_modifier = {
+		name = holy_site_medina_effect_name
+		diplomacy_per_piety_level = 1
+	}
+}
+
+# Muwalladi (Iberian Sunni)
+
+cordoba = {
+	county = c_cordoba
+
+	flag = cordoba_conversion_bonus # +20% county conversion speed
+}
+
+sinai = {
+	county = c_sinai
+
+	character_modifier = {
+		name = holy_site_sinai_effect_name
+		desert_mountains_advantage = 5
+		learning = 1
+	}
+}
+
+
+
+nadjaf = {
+	county = c_kufa
+	barony = b_an-najaf
+
+	character_modifier = {
+		name = holy_site_nadjaf_effect_name
+		diplomacy_per_piety_level = 1
+		#levy_reinforcement_rate_same_faith = 0.1
+	}
+}
+
+damascus = {
+	county = c_damascus
+
+	character_modifier = {
+		name = holy_site_damascus_effect_name
+		levy_size = 0.05
+		monthly_county_control_change_factor = 0.1
+	}
+}
+
+
+# Muhakkima
+
+siffa = { # Location of the Battle of Siffa, where the Muhakkimas branched off from the other Islamic schools.
+	county = c_palmyra
+
+	character_modifier = {
+		name = holy_site_siffa_effect_name
+		prowess = 2
+		knight_effectiveness_mult = 0.2
+	}
+}
+
+kufa = {
+	county = c_kufa
+
+	character_modifier = {
+		name = holy_site_kufa_effect_name
+		intrigue_per_piety_level = 1
+	}
+}
+
+# Ibadi ( Omani Muhakkima )
+
+basra = { # Location where the Ibadi school of thought originated.
+	county = c_basra
+
+	character_modifier = {
+		name = holy_site_basra_effect_name
+		learning = 2
+	}
+}
+
+nizwa = { # Where the Ibadi took refuge after being exiled.
+	county = c_nizwa
+
+	character_modifier = {
+		name = holy_site_nizwa_effect_name
+		stewardship_per_piety_level = 1
+	}
+}
+
+awkar = { # Capital of the Wagadu Empire, seat of the Bida cult.
+	county = c_awkar
+
+	character_modifier = {
+		name = holy_site_awkar_effect_name
+		knight_limit = 2
+		light_cavalry_toughness_mult = 0.1
+	}
+}

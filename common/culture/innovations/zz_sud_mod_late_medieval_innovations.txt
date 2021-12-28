@@ -1,0 +1,103 @@
+﻿@leadership_2 = "gfx/interface/icons/culture_innovations/innovation_leadership_02.dds"
+@weapons_and_armor_02 = "gfx/interface/icons/culture_innovations/innovation_weapons_and_armor_02.dds"
+@knight = "gfx/interface/icons/culture_innovations/innovation_knight.dds"
+@maa_02 = "gfx/interface/icons/culture_innovations/innovation_maa_02.dds"
+
+innovation_standing_armies = {
+	group = culture_group_military
+	culture_era = culture_era_late_medieval
+	icon = @leadership_2
+	
+	modifier = {
+		men_at_arms_cap = 10
+		men_at_arms_limit = 1
+		men_at_arms_maintenance = 0.15
+		levy_size = -0.2
+	}
+
+	flag = global_regular
+	flag = late_medieval_era_regular
+}
+
+innovation_centralization_3 = {
+	group = culture_group_civic
+	culture_era = culture_era_late_medieval
+	icon = @leadership_2
+	
+	custom = sud_mod_reduced_factionalism_3
+	modifier = {
+		powerful_vassal_opinion = 10
+	}
+
+	flag = global_regular
+	flag = late_medieval_era_regular
+}
+
+innovation_plate_armor = {
+	group = culture_group_military
+	culture_era = culture_era_late_medieval
+	icon =  @weapons_and_armor_02
+	
+	maa_upgrade = {
+		type = heavy_infantry
+		toughness = 5
+	}
+	maa_upgrade = {
+		type = heavy_cavalry
+		toughness = 5
+	}
+
+	flag = global_regular
+	flag = late_medieval_era_regular
+}
+
+innovation_commoners_drill = {
+	group = culture_group_military
+	culture_era = culture_era_late_medieval
+	icon =  @weapons_and_armor_02
+	
+	maa_upgrade = {
+		type = pikemen
+		toughness = 3
+	}
+	maa_upgrade = {
+		type = pikemen
+		damage = 3
+	}
+
+	flag = global_regular
+	flag = late_medieval_era_regular
+}
+
+innovation_advanced_swordsmithing = {
+	group = culture_group_military
+	culture_era = culture_era_late_medieval
+	icon =  @weapons_and_armor_02
+	
+	maa_upgrade = {
+		type = heavy_cavalry
+		damage = 5
+	}
+	maa_upgrade = {
+		type = heavy_infantry
+		damage = 5
+	}
+
+	flag = global_regular
+	flag = late_medieval_era_regular
+}
+
+innovation_barding = {
+	group = culture_group_military
+	culture_era = culture_era_late_medieval
+	icon =  @knight
+	
+	maa_upgrade = {
+		type = heavy_cavalry
+		toughness = 8
+	}
+
+	flag = global_regular
+	flag = late_medieval_era_regular
+}
+

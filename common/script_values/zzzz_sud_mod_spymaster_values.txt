@@ -1,0 +1,26 @@
+﻿spymaster_disrupt_schemes_modifier_base_scale = {
+	add = intrigue
+	divide = 1.75
+}
+
+spymaster_espionage_modifier_base_scale = {
+	add = intrigue
+	multiply = 1.15
+}
+
+spymaster_espionage_success_chance_modifier_base_scale = {
+	add = {
+		add = intrigue
+		multiply = 0.6
+	}
+}
+
+spymaster_disrupt_schemes_scheme_discovery_modifier = {
+	add = intrigue
+	multiply = 1.15
+}
+
+spymaster_find_secrets_monthly_increase = {
+	add = intrigue
+	multiply = 1.25
+}

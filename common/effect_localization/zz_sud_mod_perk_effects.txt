@@ -1,0 +1,3 @@
+﻿learned_proselytizer_perk_effect = {
+	global = CONVERT_COUNTY_SPEED_BONUS
+}

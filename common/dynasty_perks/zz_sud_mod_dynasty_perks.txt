@@ -1,0 +1,273 @@
+﻿blood_legacy_4 = { # Architected Ancestry
+	legacy = blood_legacy_track
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = blood_legacy_4_effect
+		}
+	}
+
+	traits = {
+		beauty_good_1 = 100
+		intellect_good_1 = 100
+		physique_good_1 = 100
+		fecund = 66
+		albino = 66
+		giant = 33
+		dwarf = 33
+		scaly = 33
+	}
+}
+
+warfare_legacy_2 = { # Generational Belligerence
+	legacy = warfare_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = warfare_legacy_2_effect
+		}
+	}
+	character_modifier = {
+		#martial_per_prestige_level = 1
+		pursue_efficiency = 0.15
+		retreat_losses = -0.15
+	}
+}
+
+warfare_legacy_3 = { # Squire Traditions
+	legacy = warfare_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = warfare_legacy_3_effect
+		}
+	}
+	
+	character_modifier = {
+		monthly_martial_lifestyle_xp_gain_mult = 0.25
+	}
+}
+
+
+warfare_legacy_5 = { # Private Army
+	legacy = warfare_legacy_track
+
+	unlock_maa = house_guard
+
+	character_modifier = {
+		men_at_arms_cap = 2
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = warfare_legacy_5_effect
+		}	
+	}
+}
+
+# LAW LEGACIES
+
+law_legacy_1 = { # Mostly Fair
+	legacy = law_legacy_track
+
+	character_modifier = {
+		county_opinion_add = 10
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = law_legacy_1_effect
+		}	
+	}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+}
+
+law_legacy_3 = { # Power and Prosperity
+	legacy = law_legacy_track
+
+	character_modifier = {
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.25
+		build_gold_cost = -0.05
+		holding_build_gold_cost = -0.05
+	}
+}
+
+law_legacy_4 = { # Delegated Authority
+	legacy = law_legacy_track
+
+	character_modifier = {
+		name = law_legacy_4_name
+		powerful_vassal_opinion = 8
+		happy_powerful_vassal_tax_contribution_mult = 0.1
+		happy_powerful_vassal_levy_contribution_mult = 0.1
+	}
+}
+
+law_legacy_5 = { # Home Estates
+	legacy = law_legacy_track
+
+	character_modifier = {
+		name = law_legacy_5_name
+		domain_limit = 2
+		controlled_province_advantage = 5
+	}
+}
+
+# GUILE LEGACIES
+
+
+guile_legacy_3 = { # Natural Schemers
+	legacy = guile_legacy_track
+
+	character_modifier = {
+		monthly_intrigue_lifestyle_xp_gain_mult = 0.25
+		owned_scheme_secrecy_add = 15
+	}
+}
+
+guile_legacy_4 = { # Venial
+	legacy = guile_legacy_track
+
+	character_modifier = {
+		monthly_tyranny = -0.1
+		intimidated_vassal_tax_contribution_mult = 0.1
+		cowed_vassal_tax_contribution_mult = 0.2
+	}
+}
+
+
+# ERUDITION LEGACIES
+
+erudition_legacy_1 = { # Vibrant Court
+	legacy = erudition_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = erudition_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+		courtier_and_guest_opinion = 15
+	}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+}
+
+erudition_legacy_2 = { # Ordained Rulership
+	legacy = erudition_legacy_track
+
+	character_modifier = {
+		name = erudition_legacy_2_name
+		monthly_piety_gain_mult = 0.1
+	}
+	
+	doctrine_character_modifier = {
+		name = erudition_legacy_2_modifier_name
+		doctrine = doctrine_theocracy_lay_clergy
+		same_faith_opinion = 3
+	}
+	doctrine_character_modifier = {
+		name = erudition_legacy_2_modifier_name
+		doctrine = doctrine_theocracy_temporal
+		clergy_opinion = 5
+	}
+}
+
+erudition_legacy_3 = { # Treasured Knowledge
+	legacy = erudition_legacy_track
+
+	character_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.25
+		development_growth_factor = 0.2
+	}
+}
+
+
+# GLORY LEGACIES
+
+glory_legacy_2 = { # Renowned Name
+	legacy = glory_legacy_track
+
+	character_modifier = {
+		name = glory_legacy_2_name
+		monthly_prestige_gain_mult = 0.1
+		mercenary_hire_cost_mult = -0.1
+		knight_limit = 2
+	}
+}
+
+glory_legacy_3 = { # Earning Respect
+	legacy = glory_legacy_track
+
+	character_modifier = {
+		monthly_diplomacy_lifestyle_xp_gain_mult = 0.25
+		personal_scheme_power_mult = 0.25
+	}
+}
+
+glory_legacy_4 = { # Assertive Rulers
+	legacy = glory_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = glory_legacy_4_perk_effect
+		}
+	}
+
+	character_modifier = {
+		short_reign_duration_mult = -0.3
+		vassal_limit = 5
+	}
+}
+
+# KIN LEGACIES
+
+kin_legacy_3 = { # Constant Care
+	legacy = kin_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = kin_legacy_3_legacy_effect
+		}
+	}
+
+	character_modifier = {
+		spouse_opinion = 20
+		negate_health_penalty_add = 0.5
+	}
+}
+
+kin_legacy_4 = { # Close Bonds
+	legacy = kin_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = kin_legacy_4_legacy_effect
+		}
+	}
+
+	character_modifier = {
+		dynasty_opinion = 10
+		close_relative_opinion = 10
+	}
+}
+
+

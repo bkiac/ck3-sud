@@ -1,0 +1,15 @@
+﻿theologian_perk = {
+	lifestyle = learning_lifestyle
+	tree = theology
+	position = { 1 5 }
+	icon = trait_theologian
+	
+	parent = defender_of_the_faith_perk
+	
+	effect = {
+		add_trait_force_tooltip = theologian
+		custom_description_no_bullet = {
+			text = learned_proselytizer_perk_effect
+		}
+	}
+}

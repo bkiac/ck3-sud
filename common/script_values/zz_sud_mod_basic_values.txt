@@ -1,0 +1,12 @@
+﻿#Pope gold changes
+#pope_medium_gold_min_value = 2000
+#pope_medium_gold_max_value = 3000
+#pope_major_gold_min_value = 3001
+#pope_major_gold_max_value = 5000
+#pope_massive_gold_min_value = 5001
+#pope_massive_gold_max_value = 7000
+#pope_monumental_gold_min_value = 7001
+#pope_monumental_gold_max_value = 10000
+
+#monumental_dynasty_prestige_value = 3000
+#excessive_dynasty_prestige_value = 4000

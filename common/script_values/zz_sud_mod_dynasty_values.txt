@@ -1,0 +1,1 @@
+﻿erudition_legacy_5_percentage = 25

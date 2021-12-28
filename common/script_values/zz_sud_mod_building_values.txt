@@ -1,0 +1,17 @@
+﻿#################
+# Building Cost #
+#################
+
+@cheap_cost_base = 90
+@normal_cost_base = 135
+@expensive_cost_base = 180
+@main_cost_base = 360
+@tribal_cost_base = 68
+
+# We have four 'building cost classes', each one has a better scale than the others.
+@cheap_cost_scale_addition_per_tier = 45
+@normal_cost_scale_addition_per_tier = 68
+@expensive_cost_scale_addition_per_tier = 90
+@main_cost_scale_addition_per_tier = 135
+@tribal_cost_scale_addition_per_tier = 22
+

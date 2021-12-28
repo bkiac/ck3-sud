@@ -1,0 +1,497 @@
+﻿##########
+# Aurelian Walls
+##########
+
+aurelian_walls_01 = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+	
+	can_construct_potential = {
+		barony = title:b_roma
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = 3000
+	
+	max_garrison = 2000
+	
+	character_modifier = {
+		monthly_piety = 0.35
+		men_at_arms_cap = 2
+	}
+	
+	duchy_capital_county_modifier = {
+		levy_size = 0.05
+		tax_mult = 0.25
+	}
+	
+	county_modifier = {
+		development_growth = 0.2
+		development_growth_factor = 0.1
+		hostile_raid_time = 4
+		defender_advantage = 20
+	}
+	province_modifier = {
+		fort_level = 12
+		garrison_size = 4
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = duchy_capital
+}
+
+##########
+# Theodosian Walls
+##########
+
+theodosian_walls_01 = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_theodosian_walls.dds"
+	
+	can_construct_potential = {
+		barony = title:b_constantinople
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = 3000
+	
+	max_garrison = 2000
+	duchy_capital_county_modifier = {
+		tax_mult = 0.25
+	}
+	province_modifier = {
+		fort_level = 12
+		garrison_size = 2
+	}
+	county_modifier = {
+		defender_advantage = 15
+		development_growth = 0.4
+		development_growth_factor = 0.25
+		tax_mult = 3
+		hostile_raid_time = 2
+		monthly_county_control_change_add = 2
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = duchy_capital
+}
+
+
+##########
+# Universities
+##########
+
+generic_university = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_building_university.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_university_requirement = yes
+	}
+	
+	can_construct = {
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		learning_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.1
+		monthly_dynasty_prestige = 0.25
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.2
+				development_growth = 0.1
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
+
+al_azhar_university = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_al-azhar_university.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_university_requirement = yes
+	}
+	
+	can_construct = {
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		learning_per_prestige_level = 1
+		diplomacy_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.2
+		monthly_dynasty_prestige = 0.25
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.4
+		development_growth = 0.2
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
+
+sankore_university = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_the_university_of_sankore.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_university_requirement = yes
+	}
+	
+	can_construct = {
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		learning_per_prestige_level = 1
+		martial_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.2
+		monthly_dynasty_prestige = 0.25
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.4
+		development_growth = 0.2
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
+
+siena_university = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_university_of_siena.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_university_requirement = yes
+	}
+	
+	can_construct = {
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		learning_per_prestige_level = 1
+		intrigue_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.2
+		monthly_dynasty_prestige = 0.25
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.4
+		development_growth = 0.2
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
+
+nalanda_university = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_nalanda.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_university_requirement = yes
+	}
+	
+	can_construct = {
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		learning_per_prestige_level = 1
+		stewardship_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.2
+		monthly_dynasty_prestige = 0.25
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.4
+		development_growth = 0.2
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
+
+########
+#sicilian_parliament
+########
+
+special_sicilian_parliament_01 = {
+	construction_time = very_slow_construction_time
+	
+	is_enabled = {
+		is_county_capital = yes
+		has_variable = variable_sicilian_parliament_county
+	}
+
+	cost_gold = 1500
+	
+	province_modifier = {
+		monthly_income = 1
+	}
+	county_modifier = {
+		development_growth_factor = 0.25
+		monthly_county_control_change_add = 1
+		county_opinion_add = 25
+	}
+	character_modifier = {
+		monthly_prestige = 0.75
+	}
+
+	type_icon = "icon_building_generic_house.dds"
+	
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 0
+			scope:holder = {
+				has_government = theocracy_government
+			}
+		}
+	}
+	
+	type = special
+}
+
+########
+#Greenhouse
+########
+
+special_greenhouse_01 = {
+	construction_time = very_slow_construction_time
+	
+	is_enabled = {
+		has_variable = variable_greenhouse
+	}
+	
+	province_modifier = {
+		monthly_income = 1
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.35
+		county_opinion_add = 25
+	}
+	character_modifier = {
+		health = 0.25
+		monthly_prestige = 1
+	}
+
+	type_icon = "icon_building_generic_house.dds"
+	
+	ai_value = {
+		base = 100
+	}
+	
+	#type = special
+}
+
+##########
+# Hagia Sophia
+##########
+
+hagia_sophia_01 = {
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_hagia_sophia_mesh"
+	}
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_hagia_sophia.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	is_enabled = {
+		custom_description = {
+			text = holy_site_building_trigger
+			barony = {
+				is_holy_site_of = scope:holder.faith
+			}
+		}
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		monthly_piety_gain_per_knight_add = 0.1
+		intrigue_per_prestige_level = 2
+		learning = 2
+		knight_limit = 4
+		knight_effectiveness_mult = 0.2
+		monthly_dynasty_prestige_mult = 0.05
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.2
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	next_building = hagia_sophia_02
+	
+	type = special
+}
+
+hagia_sophia_02 = {
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_hagia_sophia_minarets_mesh"
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_hagia_sophia.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	can_construct = {
+		scope:holder = {
+			religion = religion:islam_religion
+		}
+	}
+	
+	is_enabled = {
+		custom_description = {
+			text = holy_site_muslim_or_holy_site_trigger
+			OR = {
+				scope:holder = {
+					religion = religion:islam_religion
+				}
+				custom_description = {
+					text = holy_site_building_trigger
+					barony = {
+						is_holy_site_of = scope:holder.faith
+					}
+				}
+			}
+		}
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+	cost_piety = 1000
+
+	character_modifier = {
+		monthly_piety_gain_per_knight_add = 0.1
+		intrigue_per_prestige_level = 2
+		learning = 2
+		knight_limit = 4
+		knight_effectiveness_mult = 0.2
+		monthly_dynasty_prestige_mult = 0.05
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
+
+##########
+# Heddal Stave Church
+##########
+
+heddal_stave_church_01 = {
+	construction_time = slow_construction_time
+	
+	type_icon = "icon_structure_cathedral_pagan.dds"
+	
+	can_construct_potential = {
+	}
+	
+	can_construct = {
+		scope:holder.culture = {
+			has_innovation = innovation_city_planning
+		}
+	}
+	
+	cost_gold = 1000
+	
+	character_modifier = {
+		monthly_piety_gain_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.05
+		knight_effectiveness_mult = 0.2
+		knight_limit = 2
+	}
+	province_modifier = {
+		monthly_income = 1
+	}
+	county_modifier = {
+		tax_mult = 0.1
+		levy_size = 0.1
+		county_opinion_add = 10
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}

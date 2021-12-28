@@ -1,0 +1,22 @@
+﻿seek_indulgences_major_criminal_trait_value = {
+	value = head_of_faith_gold_value
+	multiply = 3
+}
+seek_indulgences_medium_criminal_trait_value = {
+	value = head_of_faith_gold_value
+	multiply = 1.75
+}
+seek_indulgences_minor_criminal_trait_value = {
+	value = head_of_faith_gold_value
+	multiply = 1.0
+}
+seek_indulgences_buy_piety_value = {
+	value = head_of_faith_gold_value
+	multiply = 0.33
+}
+
+steward_increase_development_value = {
+	value = yearly_character_income
+	multiply = 0.5
+	min = 100
+}

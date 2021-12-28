@@ -1,0 +1,141 @@
+﻿
+###TRIGGER LIST
+
+### CHEATING ####
+# might_cheat_on_partner_trigger - If scope would at all be willing to cheat, baseline that must be passed
+# might_cheat_on_every_partner_trigger - checks might_cheat_on_partner_trigger on every partner
+# dislikes_partner_cheating_trigger	
+
+might_cheat_on_partner_trigger = {
+	trigger_if = {
+		limit = {
+			# If $PARTNER$ isn't actually my partner, it's not cheating!
+			OR = {
+				has_relation_lover = $PARTNER$
+				is_consort_of = $PARTNER$ # Includes both spouses and concubines
+			}
+
+			# Additionally, in faiths with the Polyamory doctrine, extramarital relationships aren't considered to be cheating on partners.
+			NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+		}
+
+		# Soulmates never cheat, unless they're Lustful/Seducer and have low Honor
+		trigger_if = {
+			limit = { has_relation_soulmate = $PARTNER$ }
+			ai_honor <= very_high_negative_ai_value
+			has_trait = lustful
+			has_trait = seducer
+			has_focus = intrigue_temptation_focus
+		}
+
+		# Non-soulmates have slightly more complex criteria
+		trigger_else = {
+			OR = {
+				# Having one of these things that makes characters always willing to cheat:
+				OR = {
+					has_trait = lustful
+					has_trait = seducer
+					has_focus = intrigue_temptation_focus
+
+					AND = {
+						# Dishonorable and callous enough to not care about current partners (regardless of opinion).
+						ai_compassion <= very_high_negative_ai_value
+						ai_honor <= very_high_negative_ai_value 
+					}
+					AND = {
+						# Needs aren't getting met
+						is_deviant_trigger = yes
+						$PARTNER$ = { is_deviant_trigger = no }
+					}
+				}
+
+				# Otherwise, they need to not be honorable and not have a strong like of this partner
+				AND = {
+					ai_honor < low_positive_ai_value = 20
+					trigger_if = {
+						limit = {
+							is_consort_of = $PARTNER$
+						}
+						opinion = {
+							target = $PARTNER$
+							value <= medium_positive_opinion # 40 for spouses/concubines
+						}
+					}
+					trigger_else = {
+						opinion = {
+							target = $PARTNER$
+							value <= high_positive_opinion # 60 for lovers
+						}
+					}
+				}
+
+				# Might also cheat if they just dislike their partner, regardless of honor
+				AND = {
+					opinion = {
+						target = $PARTNER$
+						value < medium_negative_opinion # -41 or lower for spouses, concubines, or lovers
+					}
+				}
+			}
+		}
+	}
+	trigger_else = { always = yes } # Having an extramarital relationship with someone else would not count as cheating on this person.
+}
+
+might_cheat_on_every_partner_trigger = {
+	save_temporary_scope_as = potential_cheater
+	any_spouse = {
+		count = all
+		save_temporary_scope_as = partner2
+		scope:potential_cheater = { might_cheat_on_partner_trigger = { PARTNER = scope:partner2 } }
+	}
+	any_relation = {
+		type = lover
+		count = all
+		save_temporary_scope_as = partner3
+		scope:potential_cheater = { might_cheat_on_partner_trigger = { PARTNER = scope:partner3 } }
+	}
+}
+
+
+dislikes_partner_cheating_trigger = {
+	trigger_if = {
+		limit = {
+			OR = {
+				has_relation_lover = $PARTNER$
+				is_consort_of = $PARTNER$
+			}
+		}
+		$PARTNER$ = { save_temporary_scope_as = cheating_trigger_partner }
+		save_temporary_scope_as = cheating_trigger_root
+		OR = {
+			AND = {
+				has_relation_soulmate = $PARTNER$ # Soulmates are exclusive
+				NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+			}
+			AND = {  # Feels slighted
+				is_consort_of = $PARTNER$
+				trait_is_shunned_or_criminal_in_faith_trigger = {
+					TRAIT = adulterer
+					FAITH = scope:cheating_trigger_root.faith
+					GENDER_CHARACTER = scope:cheating_trigger_partner
+				}
+				OR = {
+					ai_honor >= 0
+					ai_zeal >= 0
+					has_trait = arrogant
+					ai_vengefulness <= 0
+				}
+			}
+			opinion = { # Loves partner
+				target = $PARTNER$
+				value >= high_positive_opinion
+			}
+		}
+		NAND = { # Sexually liberal characters don't mind, unless you're exclusive
+			sexually_liberal_trigger = yes
+			NOT = { has_relation_soulmate = $PARTNER$ }
+		}
+	}
+	trigger_else = { always = no } # Partner isn't my partner, so I don't care
+}

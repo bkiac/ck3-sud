@@ -1,0 +1,201 @@
+﻿NCombat = {
+	UNRAISED_LEVY_REGIMENTS_SPEED = 8.0			# How many distance units do unraised regiments travel per day when gathering
+	PURSUIT_STAT_TO_PURSUIT_DAMAGE = 0.75			# The pursuit stat is multiplied by this before being turned into actual damage
+	ADVANTAGE_DAMAGE_SCALING_FACTOR = 2.5				# How much should the advantage affect damage given. Default is 2
+	KNIGHT_DAMAGE_PER_PROWESS = 45					# How much "Damage" stat does a knight get per prowess?
+	KNIGHT_TOUGHNESS_PER_PROWESS = 15				# How much "Toughness" stat does a knight get per prowess?
+	COMBAT_EVENT_DAYS = 5							# How many days are there between knight events?
+	DISEMBARK_PENALTY_DAYS = 9						# How long does an army have a penalty after disembarking?
+}
+	
+NFleet = {
+	FLEET_SPEED = 15						# Fleet speed
+	EMBARK_GOLD_COST_PER_HUNDRED = 1.25		# Embark cost for every hundred units
+	GOLD_COST_MAINTENANCE_MULT = 0.50		# Increase in the gold maintenance for armies that are embarked
+}	
+	
+NDomain = {
+	LEVIES_AT_MAX_COUNTY_DEVELOPMENT = 0.25		# How many % levies bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100
+	TAX_AT_MAX_COUNTY_DEVELOPMENT = 1.0			# How much % tax bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100
+}
+
+NCulture = {
+	INNOVATION_PROGRESS_CHANCE_FROM_FASCINATION_BASE = 4
+	INNOVATION_PROGRESS_CHANCE_FROM_FASCINATION_PER_LEARNING_LEVEL = 3
+	INNOVATION_PROGRESS_CHANCE_FROM_EXPOSURE = 10							# if there is any exposure
+	# from fascination = base + max( 0, head learning skill - HEAD_LEARNING_BASE ) * PER_LEARNING_LEVEL
+	INNOVATION_PROGRESS_GAIN_BASE = 0.15
+	INNOVATION_PROGRESS_GAIN_PER_AVERAGE_DEVELOPMENT_LEVEL = 0.02
+	INNOVATION_PROGRESS_GAIN_PER_ERA_AHEAD = 0.1
+}
+
+NPathFinding = {
+	EMBARK_COST = 45								# This value will be set as pathfinding cost if it goes from land to sea
+	DISEMBARK_COST = 15								# This value will be set as pathfinding cost if it goes from sea to land
+}
+
+NProvince = {
+	SUPPLY_PER_DEVELOPMENT = 180				# Each development adds this much sto the supply limit
+	BARONY_BUILDING_SLOTS = 5
+	COUNTY_BUILDING_SLOTS = 7
+}
+
+NImprisonment = {
+	RANSOM_COST_BY_TIER = {
+		20		# Unlanded
+		30		# Baron
+		50		# Count
+		150		# Duke
+		450		# King
+		1500		# Emperor
+	}
+}
+
+NReligion = {
+	# Hostility levels start at 0 (same faith or equivalent to same faith)
+	HOSTILITY_OPINION_EFFECTS = {	# The opinion effects of each hostility level
+		0
+		-10
+		-20
+		-40
+	}
+	FAITH_CONVERSION_PIETY_MINIMUM = 350 # The minimum amount of piety converting faith costs. Default is 250
+	FAITH_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR = 1 # How much cheaper does creating a faith get per fervor below 100%? 1 means 1% per point
+	FAITH_CREATION_FERVOR_DISCOUNT_MAX = 75 # What percentage does the discount cap out at? With these numbers, 0-50 fervor means a 50% discount. Above 50 means between 0% and 50% discount
+	}
+
+NFaction =
+{
+	MONTHS_IDLE_DEMAND = 60							# After accepting or losing a war the faction will stay this time without enforcing any demands
+	COUNTY_CREATE_MIN_SCORE = 15					# Minimum score to necessary to even consider create a faction
+	COUNTY_JOIN_MIN_SCORE = 10						# Minimum score to necessary to even consider join a faction
+	COUNTY_LEAVE_SCORE_THRESHOLD = -10				# If the join score goes below this value the member leaves the faction
+}
+
+NWar = {
+	ATTACKER_TICKING_WAR_SCORE = 0.083				# Default ticking war score per day for attackers. Can be overwritten by CB. Set to 0 to disable
+	DEFENDER_TICKING_WAR_SCORE = 0.083				# Default ticking war score per day for defenders. Can be overwritten by CB. Set to 0 to disable
+	DEFENDER_TICKING_WAR_SCORE_DELAY_DAYS = 1100		# Default delay in days before applying ticking war score for defenders. Can be overwritten by CB
+	CAPTURED_VASSAL_WAR_SCORE = 2					# War Score for each direct vassal of the war leader
+	CAPTURED_SPOUSE_WAR_SCORE = 5					# War Score from capturing one or more spouses
+	BATTLE_WAR_CONTRIBUTION_MULTIPLIER = 0.4		# War contribution from battles are multiplied with this value
+}
+
+NRetreat = {
+	SHATTERED_RETREAT_PREFERRED_PROVINCES = 5
+	SHATTERED_RETREAT_MAX_PREFERRED_OFFSET_PENALTY = 5
+	SHATTERED_RETREAT_MAX_PROVINCES = 10
+}
+
+NMercenary = {
+
+	LEVELS = { 0 5 10 15 }
+	LEVIES = { 0 0 0 0 }				# The base numbers of levies for levels of mercenary bands
+	MAA_REGIMENTS = { 1 2 3 4 }				# The number of MAA regiments for levels of mercenary bands
+	NUM_KNIGHTS = { 2 3 4 6 }					# The number of knights for levels of mercenary bands
+	MAA_REGIMENT_SIZES = { 4 4 4 4 }	# The base sizes of MAA regiments for levels of mercenary bands, in number of sub-regiments
+	SKIP_CULTURAL_CHANCE = { 0.5 0.33 0.2 0.1 }	# The chance that we skip including a cultural MaA in a merc company
+	
+	SIZE_INNOVATIONS_RATIO = 5.0			# How much are mercenary companies growing with the ratio of discovered to all cultural innovations of the culture. 1.0 means +100%
+											# if SIZE_INNOVATIONS_RATIO = 2, the mercenaries will be 3x their original size if all innovations are discovered
+		
+	LEVY_COST_PER_100_SOLDIERS = 12.0		# The cost of the levy regiment part of mercenary companies, per 100 soldiers for better precision. Default is 12
+	MAA_COST_RATIO = 0.65					# The cost of the MAA regiments of mercenary companies as a fraction of what those regiments cost when buying them. 0.5 is default.
+	ALLOWED_DEBT_MONTHS = 2				# How many months of monthly income in dept are characters allowed to have before being blocked from hiring mercenaries
+	}
+
+NArmy = {
+
+	GOLD_COST_PER_SOLDIER = 0.0033					# Gold maintenance cost per soldier. Default is 0.0033
+	REGIMENT_MONTHLY_REINFORCE_SPEED = 0.02			# Monthly reinforcement percentage of unraised chunks [0-1]. Default 0.03
+	REGIMENT_MONTHLY_MAA_REINFORCE_SPEED = 0.025		# Monthly reinforcement percentage of unraised MAA chunks [0-1] Default 0.1
+	SUPPLY_GAIN_BELOW_LIMIT = 20					# Each check's supply gain under or at the province's supply limit
+	SUPPLY_OWN_REALM = 0.2							# Extra supply within top realm
+	SUPPLY_OWN_SUB_REALM = 0.4						# Extra supply within subrealm
+	MOVEMENT_SPEED_RETREAT = 4.5					# Movement speed while retreating
+	MOVEMENT_SPEED = 3.4								# Normal movement speed
+	MOVEMENT_SPEED_BONUS_FRIENDLY_AREA = 0.4
+}
+
+NCharacter ={
+	PARTITION_SCORE_PER_OWN_COUNTY = 5		# How much score does a county you own contribute in Partition when selecting a title? The higher this is, the more we encourage getting a title you've already got land in
+	PARTITION_SCORE_PER_OTHER_COUNTY = 2	# How much score does a county another heir owns take away in Partition when selecting a title? The higher this is, the more we encourage getting a title that other heirs don't have land in
+}
+
+NHolyOrder = {
+	# In addition to the holding levies, a holy order has levies according to this formula:
+	# NUM_LEVIES_BASE + <num holdings> * NUM_LEVIES_PER_HOLDING
+	NUM_LEVIES_BASE = 10
+	NUM_LEVIES_PER_HOLDING = 5
+
+	# The holy order starts out with NUM_MAA_BASE Men-At-Arms. These will always try to use the holy_order_maa defined in the religion, if any are available.
+	NUM_MAA_BASE = 3
+
+	# The holy order also gets NUM_MAA_PER_HOLDING additional Men-At-Arms for each holding leased to it.
+	NUM_MAA_PER_HOLDING = 3
+	# The regiment type of these additional Men-At-Arms has a chance of RELIGION_MAA_RATIO % (multiplied by 100) to use a religious type, like NUM_MAA_BASE.
+	# Otherwise it will use a random type with the holy_order_fallback = yes flag.
+	RELIGION_MAA_RATIO = 0.9
+
+	PATRON_MIN_TIER = 4						# minimum tier for a ruler to be a patron of a holy order
+
+	LEVY_COST_PER_100_SOLDIERS = 8.0		# The piety cost of the levy regiment part of holy orders, per 100 soldiers for better precision
+	MAA_COST_RATIO = 0.4					# The piety cost of the MAA regiments of holy orders as a fraction of what those regiments cost when buying them
+	PATRON_HIRE_COST_MULT = 0.25				# The patron pays only a fraction for hiring a holy order. Set to 0 to make it free.
+
+	# One character can hire up to this many holy orders. Set to -1 to disable the limit.
+	HIRE_LIMIT = 1
+
+	# Must be at war with someone with at least this hostility level to be able to hire holy orders. Once hired hey can be used against all enemies, though.
+	ENEMY_MIN_HOSTILITY_LEVEL = 2
+	
+	BASE_NUM_KNIGHTS = 4					# How many knights do holy orders have?
+	EXTRA_KNIGHTS_PER_HOLDING = 4			# How many knights do holy orders get for each holding? Rounds down
+
+	COAT_OF_ARMS_LIST = "religious_title"
+}
+
+NPlayer = {
+	RALLY_POINT_LIMIT = 10		# Rally point number limit for players
+	MIN_PATH_COST_SAVINGS_TO_CONSIDER_WATER_PATH = 90	# Number of travel days saved before right-clicking considers going through water instead
+}
+
+NSiege = {
+	SIEGE_FORT_THRESHOLDS = { # At what levels is another level of siege tier needed to avoid reduced siege speed?
+		4
+		10
+		16
+		22
+		50
+	}
+	SIEGE_FORT_THRESHOLD_IMPACT = 0.5 # What is the impact of not having enough siege tier? Siege speed is multiplied for this for each missing tier. E.G., if siege tier is 0, and fort level is 4, siege speed is multiplied by 0.5 * 0.5. Default is 0.6
+
+	SIEGE_LOOOT_MULTIPLIER = 50 # The income of the holding multiplied by this number is how much loot the besieging army will get for occupying it.
+}
+
+NDynasty = {
+	MONTHLY_PRESTIGE_GAIN_PER_MEMBER = 0.00 # Was 0.2 per year, should be then 0.016 recurring but that is ugly so round to 0.015
+	MONTHLY_PRESTIGE_GAIN_PER_TITLE_TIER = { 0 0.25 0.5 1 2.5 5 } # When per year was { 0 2 4 6 8 10 }
+	MONTHLY_PRESTIGE_GAIN_MULT_FOR_VASSALS_OF_SAME_DYNASTY = 0.0	# Dynasty members who are vassal of below of someone of the same dynasty have their prestige contribution multiplied with this. 0 disables their prestige contribution entirely
+	MONTHLY_PRESTIGE_GAIN_PER_TITLE_TIER_SPOUSE = { 0 0.1 0.2 0.7 2.2 5 } # When per year was { 0 2 4 6 8 10 }
+	MONTHLY_PRESTIGE_GAIN_MULT_FOR_VASSALS_OF_SAME_DYNASTY_SPOUSE = 0.0	# Dynasty members whose spouse are vassal of below of someone of the same dynasty have their prestige contribution multiplied with this. 0 disables their prestige contribution entirely
+	LEVELS_PRESTIGE = { 300	1000	2000	4000	7000	11000	16000	24000	38000	50000 }
+	MARRIAGE_PRESTIGE = { -100	0	100	200	300	400	500	600	700	900 1200 }
+	BIRTH_PRESTIGE = { 0	100	200	300	400	500	600	700	800 1000	1300 }
+	MAX_LONG_REIGN = { 5	10	15	20	25	30	35	40	45 52	60 }
+	}
+
+NHouse = {
+	HEAD_MONTHLY_PRESTIGE_GAIN_PER_MEMBER = 0.00
+}
+
+NCharacterOpinion = {
+	SAME_REALM_DIFFERENT_CULTURE_SAME_GROUP = -10
+	SAME_REALM_DIFFERENT_CULTURE = -30
+	PARTIALLY_NON_RIGHTFUL_LIEGE_OPINION = -10 			# Opinion penalty for being non-rightful liege
+	NON_RIGHTFUL_LIEGE_OPINION = -10						# Opinion penalty for being partially non-rightful liege
+}
+
+NChildbirth = {
+	TRAIT_REINFORCEMENT_CHANCE = 0.25						# The chance that a trait that gets inherited from both parents will get reinforced to a higher level.
+}

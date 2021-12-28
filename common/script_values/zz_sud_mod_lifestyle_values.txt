@@ -1,0 +1,8 @@
+﻿# Zealous Proselytizer
+zealous_proselytizer_percentage = 33
+
+# Learned Proselytizer
+learned_proselytizer_percentage = 33
+
+# Learned Proselytizer
+smart_culture_percentage = 33
